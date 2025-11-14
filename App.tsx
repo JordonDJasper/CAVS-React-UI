@@ -3,10 +3,14 @@ import msuLogo from './msu-logo.png';
 import cavsLogo from './HORIZONTAL_PRINT_white.jpg';
 import mrzrBgr from './vehicle_sys_mrzr.jpg';
 import huskyBgr from './vehicle_sys_husky.jpg'; 
-import mtxBgr from './vehicle_sys_mtx-c.jpg'
-import wthBgr from './vehicle_sys_warthog.jpg'
+import mtxBgr from './vehicle_sys_mtx-c.jpg';
+import wthBgr from './vehicle_sys_warthog.jpg';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import Control from './pages/Control';
+
+import Control from './focuses/Control';
+import FocusCamera from './focuses/FocusCamera';
+import FocusMapData from './focuses/FocusMapData';
+import FocusTelemetry from './focuses/FocusTelemetry';
 
 const backgrounds = [mrzrBgr, huskyBgr, mtxBgr, wthBgr];
 
@@ -18,16 +22,13 @@ function Welcome() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(true); // start fading in the next image
-
+      setFade(true);
       setTimeout(() => {
-        // after fade completes, update indexes
         setCurrentIndex((prev) => (prev + 1) % backgrounds.length);
         setNextIndex((prev) => (prev + 1) % backgrounds.length);
-        setFade(false); // reset for next cycle
-      }, 2000); // matches the CSS transition duration
+        setFade(false);
+      }, 2000);
     }, 5000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -55,7 +56,7 @@ function Welcome() {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: `url(${mtxBgr})`,
+          backgroundImage: `url(${backgrounds[currentIndex]})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -73,11 +74,11 @@ function Welcome() {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: `url(${mtxBgr})`,
+          backgroundImage: `url(${backgrounds[nextIndex]})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          opacity: 0,
+          opacity: fade ? 1 : 0,
           transition: "opacity 1s ease-in-out",
           zIndex: -1,
         }}
@@ -98,79 +99,37 @@ function Welcome() {
           maxWidth: '800px',
         }}
       >
-        <h1 
-          style={{ fontSize: '5rem', fontWeight: '800', margin: '0 auto 20px' }}>
+        <h1 style={{ fontSize: '5rem', fontWeight: '800', margin: '0 auto 20px' }}>
           Welcome to the CAVS Vehicle Dashboard!
         </h1>
-        <p
-          style={{
-            fontSize: '1.5rem',
-            fontWeight: '800',
-            maxWidth: 600,
-            margin: '0 auto 40px',
-            textAlign: 'center',
-          }}
-        >
+        <p style={{ fontSize: '1.5rem', fontWeight: '800', maxWidth: 600, margin: '0 auto 40px', textAlign: 'center' }}>
           Please select a view to navigate to:
         </p>
       </div>
-      <div
-          style={{
-            display: 'flex',            
-            justifyContent: 'center',    
-            gap: '20px',                 
-            marginTop: '50px',           
-          }}
-        >
+
+      {/* navigation buttons */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '50px' }}>
         <button
           onClick={() => navigate('/control')}
-          style={{
-            padding: '24px 30px',
-            fontSize: '1.25rem',
-            fontWeight: '600',
-            backgroundColor:  '#370e16ff',
-            color: 'white',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            transition: 'background-color 0.3s ease',
-          }}
+          style={buttonStyle}
           onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#5D1725')}
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#370e16ff')}
         >
           Base View
         </button>
-          <button
-          onClick={() => navigate('/control')}
-          style={{
-            padding: '24px 30px',
-            fontSize: '1.25rem',
-            fontWeight: '600',
-            backgroundColor:  '#370e16ff',
-            color: 'white',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            transition: 'background-color 0.3s ease',
-          }}
+
+        <button
+          onClick={() => navigate('/focus-camera')}
+          style={buttonStyle}
           onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#5D1725')}
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#370e16ff')}
         >
           Pilot View
         </button>
-          <button
-          onClick={() => navigate('/control')}
-          style={{
-            padding: '24px 30px',
-            fontSize: '1.25rem',
-            fontWeight: '600',
-            backgroundColor:  '#370e16ff',
-            color: 'white',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            transition: 'background-color 0.3s ease',
-          }}
+
+        <button
+          onClick={() => navigate('/focus-map-data')}
+          style={buttonStyle}
           onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#5D1725')}
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#370e16ff')}
         >
@@ -181,11 +140,26 @@ function Welcome() {
   );
 }
 
+const buttonStyle: React.CSSProperties = {
+  padding: '24px 30px',
+  fontSize: '1.25rem',
+  fontWeight: '600',
+  backgroundColor: '#370e16ff',
+  color: 'white',
+  border: 'none',
+  borderRadius: '8px',
+  cursor: 'pointer',
+  transition: 'background-color 0.3s ease',
+};
+
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Welcome />} />
       <Route path="/control" element={<Control />} />
+      <Route path="/focus-camera" element={<FocusCamera />} />
+      <Route path="/focus-map-data" element={<FocusMapData />} />
+      <Route path="/focus-telemetry" element={<FocusTelemetry />} />
     </Routes>
   );
 }
