@@ -11,6 +11,8 @@ import Control from './focuses/Control';
 import FocusCamera from './focuses/FocusCamera';
 import FocusMapData from './focuses/FocusMapData';
 import FocusTelemetry from './focuses/FocusTelemetry';
+import SponsorFocusCamera from './focuses/SponsorFocusCamera';
+import SponsorFocusMapData from './focuses/SponsorFocusMapData';
 
 const backgrounds = [mrzrBgr, huskyBgr, mtxBgr, wthBgr];
 
@@ -128,7 +130,7 @@ function Welcome() {
         </button>
 
         <button
-          onClick={() => navigate('/focus-map-data')}
+          onClick={() => navigate('/sponsor-focus-camera')}
           style={buttonStyle}
           onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#5D1725')}
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#370e16ff')}
@@ -160,6 +162,8 @@ function App() {
       <Route path="/focus-camera" element={<FocusCamera />} />
       <Route path="/focus-map-data" element={<FocusMapData />} />
       <Route path="/focus-telemetry" element={<FocusTelemetry />} />
+      <Route path="/sponsor-focus-camera" element={<SponsorFocusCamera />} />
+      <Route path="/sponsor-focus-mapdata" element={<SponsorFocusMapData />} />
     </Routes>
   );
 }
