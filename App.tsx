@@ -8,11 +8,14 @@ import wthBgr from './vehicle_sys_warthog.jpg';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import Control from './focuses/Control';
-import FocusCamera from './focuses/FocusCamera';
-import FocusMapData from './focuses/FocusMapData';
-import FocusTelemetry from './focuses/FocusTelemetry';
-import SponsorFocusCamera from './focuses/SponsorFocusCamera';
-import SponsorFocusMapData from './focuses/SponsorFocusMapData';
+import PassengerCamera from './focuses/PassengerCamera';
+import PassengerMapData from './focuses/PassengerMapData';
+import PassengerTelemetry from './focuses/PassengerTelemetry';
+import PilotCamera from './focuses/PilotCamera';
+import PilotMapData from './focuses/PilotMapData';
+import PilotTelemetry from './focuses/PilotTelemetry';
+import PatronCamera from './focuses/PatronCamera';
+import PatronMapData from './focuses/PatronMapData';
 
 const backgrounds = [mrzrBgr, huskyBgr, mtxBgr, wthBgr];
 
@@ -130,12 +133,12 @@ function Welcome() {
         </button>
 
         <button
-          onClick={() => navigate('/sponsor-focus-camera')}
+          onClick={() => navigate('/patron-focus-camera')}
           style={buttonStyle}
           onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#5D1725')}
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#370e16ff')}
         >
-          Sponsor View
+          Patron View
         </button>
       </div>
     </div>
@@ -159,11 +162,14 @@ function App() {
     <Routes>
       <Route path="/" element={<Welcome />} />
       <Route path="/control" element={<Control />} />
-      <Route path="/focus-camera" element={<FocusCamera />} />
-      <Route path="/focus-map-data" element={<FocusMapData />} />
-      <Route path="/focus-telemetry" element={<FocusTelemetry />} />
-      <Route path="/sponsor-focus-camera" element={<SponsorFocusCamera />} />
-      <Route path="/sponsor-focus-mapdata" element={<SponsorFocusMapData />} />
+      <Route path="/passenger-focus-camera" element={<PassengerFocusCamera />} />
+      <Route path="/passenger-focus-map-data" element={<PassengerFocusMapData />} />
+      <Route path="/passenger-focus-telemetry" element={<PassengerFocusTelemetry />} />
+      <Route path="/pilot-focus-camera" element={<PilotFocusCamera />} />
+      <Route path="/pilot-focus-map-data" element={<PilotFocusMapData />} />
+      <Route path="/pilot-focus-telemetry" element={<PilotFocusTelemetry />} />
+      <Route path="/patron-focus-camera" element={<PatronFocusCamera />} />
+      <Route path="/patron-focus-mapdata" element={<PatronFocusMapData />} />
     </Routes>
   );
 }
