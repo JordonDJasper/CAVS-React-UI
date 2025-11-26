@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import ROSLIB from 'roslib';
+import * as ROSLIB from 'roslib';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
@@ -260,13 +260,13 @@ export default function FocusCamera() {
         <Link to="/" style={{ textDecoration: 'none', width: '26.25%' }}>
           <div style={{ ...styles.bottomRectangle, background: 'linear-gradient(to bottom, #A22D44 0%, #000 100%)', color: '#fff' }}>Level - Pilot</div>
         </Link>
-        <Link to="/pilot-focus-camera" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/pilot-camera" style={{ textDecoration: 'none', width: '26.25%' }}>
           <div style={{ ...styles.bottomRectangle, backgroundColor: '#EBEBEB', color: '#000' }}>Focus 1: Camera</div>
         </Link>
-        <Link to="/pilot-focus-map-data" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/pilot-map-data" style={{ textDecoration: 'none', width: '26.25%' }}>
           <div style={{ ...styles.bottomRectangle, backgroundColor: '#3D3D3D', color: '#fff' }}>Focus 2: Map Data</div>
         </Link>
-        <Link to="/pilot-focus-telemetry" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/pilot-telemetry" style={{ textDecoration: 'none', width: '26.25%' }}>
           <div style={{ ...styles.bottomRectangle, backgroundColor: '#EBEBEB', color: '#000' }}>Focus 3: Telemetry</div>
         </Link>
       </div>

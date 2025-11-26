@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import ROSLIB from 'roslib';
+import * as ROSLIB from 'roslib';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
@@ -323,7 +323,7 @@ export default function PatronFocusCamera() {
             Level - Patron
           </div>
         </Link>
-        <Link to="/sponsor-focus-camera" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/patron-camera" style={{ textDecoration: 'none', width: '26.25%' }}>
           <div
             style={{
               ...styles.bottomRectangle,
@@ -335,14 +335,14 @@ export default function PatronFocusCamera() {
           </div>
         </Link>
         {/* Focus 2 - clickable, goes to PatronFocusMapData */}
-        <Link to="/sponsor-focus-mapdata" style={{ textDecoration: 'none', display: 'contents' }}>
+        <Link to="/patron-mapdata" style={{ textDecoration: 'none', display: 'contents' }}>
           <div style={{ ...styles.bottomRectangle, width: '26.25%', backgroundColor: '#EBEBEB', color: '#000' }}>
             Focus 2: Map Data
           </div>
         </Link>
         {/* Focus 3 – clickable, goes to FocusTelemetry route */}
         <Link
-          to="/focus-telemetry"
+          to="/patron-camera"
           style={{ textDecoration: 'none', width: '26.25%' }}
         >
           <div
