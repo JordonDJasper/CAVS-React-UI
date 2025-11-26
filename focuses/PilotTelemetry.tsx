@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ROSLIB from 'roslib';
+import * as ROSLIB from 'roslib';
 
 // ROS topics and message types
 const TOPICS = [
@@ -202,17 +202,17 @@ export default function FocusCamera() {
             Level - Pilot
           </div>
         </Link>
-        <Link to="/pilot-focus-camera" style={{ textDecoration: 'none', width: '26.25%' }}>          
+        <Link to="/pilot-camera" style={{ textDecoration: 'none', width: '26.25%' }}>          
           <div style={{ ...styles.bottomRectangle, backgroundColor: '#EBEBEB', color: '#000000' }}>            
             Focus 1: Camera          
           </div>        
         </Link>        
-        <Link to="/pilot-focus-map-data" style={{ textDecoration: 'none', width: '26.25%' }}>          
+        <Link to="/pilot-map-data" style={{ textDecoration: 'none', width: '26.25%' }}>          
           <div style={{ ...styles.bottomRectangle, backgroundColor: '#EBEBEB', color: '#000000' }}>           
             Focus 2: Map Data         
           </div>        
         </Link>       
-        <Link to="/pilot-focus-telemetry" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/pilot-telemetry" style={{ textDecoration: 'none', width: '26.25%' }}>
           <div style={{ ...styles.bottomRectangle, backgroundColor: '#3D3D3D', color: '#FFFFFF' }}>
             Focus 3: Telemetry
           </div>

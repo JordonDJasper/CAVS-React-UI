@@ -115,16 +115,16 @@ function Welcome() {
       {/* navigation buttons */}
       <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '50px' }}>
         <button
-          onClick={() => navigate('/control')}
+          onClick={() => navigate('/passenger-camera')}
           style={buttonStyle}
           onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#5D1725')}
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#370e16ff')}
         >
-          Base View
+          Passenger View
         </button>
 
         <button
-          onClick={() => navigate('/focus-camera')}
+          onClick={() => navigate('/pilot-camera')}
           style={buttonStyle}
           onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#5D1725')}
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#370e16ff')}
@@ -133,7 +133,7 @@ function Welcome() {
         </button>
 
         <button
-          onClick={() => navigate('/patron-focus-camera')}
+          onClick={() => navigate('/patron-camera')}
           style={buttonStyle}
           onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#5D1725')}
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#370e16ff')}
@@ -162,14 +162,14 @@ function App() {
     <Routes>
       <Route path="/" element={<Welcome />} />
       <Route path="/control" element={<Control />} />
-      <Route path="/passenger-focus-camera" element={<PassengerFocusCamera />} />
-      <Route path="/passenger-focus-map-data" element={<PassengerFocusMapData />} />
-      <Route path="/passenger-focus-telemetry" element={<PassengerFocusTelemetry />} />
-      <Route path="/pilot-focus-camera" element={<PilotFocusCamera />} />
-      <Route path="/pilot-focus-map-data" element={<PilotFocusMapData />} />
-      <Route path="/pilot-focus-telemetry" element={<PilotFocusTelemetry />} />
-      <Route path="/patron-focus-camera" element={<PatronFocusCamera />} />
-      <Route path="/patron-focus-mapdata" element={<PatronFocusMapData />} />
+      <Route path="/passenger-camera" element={<PassengerCamera />} />
+      <Route path="/passenger-map-data" element={<PassengerMapData />} />
+      <Route path="/passenger-telemetry" element={<PassengerTelemetry />} />
+      <Route path="/pilot-camera" element={<PilotCamera />} />
+      <Route path="/pilot-map-data" element={<PilotMapData />} />
+      <Route path="/pilot-telemetry" element={<PilotTelemetry />} />
+      <Route path="/patron-camera" element={<PatronCamera />} />
+      <Route path="/patron-mapdata" element={<PatronMapData />} />
     </Routes>
   );
 }

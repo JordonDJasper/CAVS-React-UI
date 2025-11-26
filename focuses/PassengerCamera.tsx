@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import ROSLIB from 'roslib';
+import * as ROSLIB from 'roslib';
 
 // ROS topics
 const TOPICS = [
@@ -206,15 +206,15 @@ export default function FocusCamera() {
       {/* Bottom Rectangles */}
       <div style={styles.bottomRectangles}>
         <Link to="/" style={{ textDecoration: 'none', width: '26.25%' }}>
-          <div style={{ ...styles.bottomRectangle, background: 'linear-gradient(to bottom, #A22D44 0%, #000 100%)', color: '#fff' }}>Level - Passnger</div>
+          <div style={{ ...styles.bottomRectangle, background: 'linear-gradient(to bottom, #A22D44 0%, #000 100%)', color: '#fff' }}>Level - Passenger</div>
         </Link>
-        <Link to="/passenger-focus-camera" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/passenger-camera" style={{ textDecoration: 'none', width: '26.25%' }}>
           <div style={{ ...styles.bottomRectangle, backgroundColor: '#3D3D3D', color: '#fff' }}>Focus 1: Camera</div>
         </Link>
-        <Link to="/passenger-focus-map-data" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/passenger-map-data" style={{ textDecoration: 'none', width: '26.25%' }}>
           <div style={{ ...styles.bottomRectangle, backgroundColor: '#EBEBEB', color: '#000' }}>Focus 2: Map Data</div>
         </Link>
-        <Link to="/passenger-focus-telemetry" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/passenger-telemetry" style={{ textDecoration: 'none', width: '26.25%' }}>
           <div style={{ ...styles.bottomRectangle, backgroundColor: '#EBEBEB', color: '#000' }}>Focus 3: Telemetry</div>
         </Link>
       </div>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import ROSLIB from 'roslib';
 import { useNavigate } from 'react-router-dom';
 
 interface Ros extends EventTarget {
