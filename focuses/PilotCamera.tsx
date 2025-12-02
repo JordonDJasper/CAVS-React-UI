@@ -14,7 +14,7 @@ const TOPICS = [
 export default function FocusCamera() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const [date, setDate] = useState(new Date().toLocaleDateString());
-  const [battery] = useState(67);
+  const [battery] = useState(100);
 
   const cameraCanvasRef = useRef<HTMLCanvasElement | null>(null);
   const cameraContainerRef = useRef<HTMLDivElement | null>(null);
@@ -205,18 +205,18 @@ export default function FocusCamera() {
 
       {/* Bottom Rectangles */}
       <div style={styles.bottomRectangles}>
-        <Link to="/" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/" style={{ textDecoration: 'none', width: '33.33%' }}>
           <div style={{ ...styles.bottomRectangle, background: 'linear-gradient(to bottom, #A22D44 0%, #000 100%)', color: '#fff' }}>Level - Pilot</div>
         </Link>
-        <Link to="/pilot-camera" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/pilot-camera" style={{ textDecoration: 'none', width: '33.33%' }}>
           <div style={{ ...styles.bottomRectangle, backgroundColor: '#3D3D3D', color: '#fff' }}>Focus 1: Camera</div>
         </Link>
-        <Link to="/pilot-map-data" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/pilot-map-data" style={{ textDecoration: 'none', width: '33.33%' }}>
           <div style={{ ...styles.bottomRectangle, backgroundColor: '#EBEBEB', color: '#000' }}>Focus 2: Map Data</div>
         </Link>
-        <Link to="/pilot-telemetry" style={{ textDecoration: 'none', width: '26.25%' }}>
+        {/*<Link to="/pilot-telemetry" style={{ textDecoration: 'none', width: '26.25%' }}>
           <div style={{ ...styles.bottomRectangle, backgroundColor: '#EBEBEB', color: '#000' }}>Focus 3: Telemetry</div>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
@@ -245,4 +245,3 @@ const styles: { [k: string]: React.CSSProperties } = {
   bottomRectangles: { display: 'flex', justifyContent: 'space-between', width: '100%', gap: '0.5%', marginTop: '0.5rem' },
   bottomRectangle: { width: '100%', height: '10vh', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' },
 };
-
