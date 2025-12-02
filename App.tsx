@@ -8,12 +8,12 @@ import wthBgr from './vehicle_sys_warthog.jpg';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import Control from './focuses/Control';
-import PassengerCamera from './focuses/PassengerCamera';
-import PassengerMapData from './focuses/PassengerMapData';
-import PassengerTelemetry from './focuses/PassengerTelemetry';
+//import PassengerCamera from './focuses/PassengerCamera';
+//import PassengerMapData from './focuses/PassengerMapData';
+//import PassengerTelemetry from './focuses/PassengerTelemetry';
 import PilotCamera from './focuses/PilotCamera';
 import PilotMapData from './focuses/PilotMapData';
-import PilotTelemetry from './focuses/PilotTelemetry';
+//import PilotTelemetry from './focuses/PilotTelemetry';
 import PatronCamera from './focuses/PatronCamera';
 import PatronMapData from './focuses/PatronMapData';
 
@@ -114,24 +114,14 @@ function Welcome() {
 
       {/* navigation buttons */}
       <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '50px' }}>
-        <button
+        {/*<button
           onClick={() => navigate('/passenger-camera')}
           style={buttonStyle}
           onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#5D1725')}
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#370e16ff')}
         >
           Passenger View
-        </button>
-
-        <button
-          onClick={() => navigate('/pilot-camera')}
-          style={buttonStyle}
-          onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#5D1725')}
-          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#370e16ff')}
-        >
-          Pilot View
-        </button>
-
+        </button> */}
         <button
           onClick={() => navigate('/patron-camera')}
           style={buttonStyle}
@@ -139,6 +129,15 @@ function Welcome() {
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#370e16ff')}
         >
           Patron View
+        </button>
+        
+        <button
+          onClick={() => navigate('/pilot-camera')}
+          style={buttonStyle}
+          onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#5D1725')}
+          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#370e16ff')}
+        >
+          Pilot View
         </button>
       </div>
     </div>
@@ -162,12 +161,12 @@ function App() {
     <Routes>
       <Route path="/" element={<Welcome />} />
       <Route path="/control" element={<Control />} />
-      <Route path="/passenger-camera" element={<PassengerCamera />} />
-      <Route path="/passenger-map-data" element={<PassengerMapData />} />
-      <Route path="/passenger-telemetry" element={<PassengerTelemetry />} />
+      {/*<Route path="/passenger-camera" element={<PassengerCamera />} /> */}
+      {/*<Route path="/passenger-map-data" element={<PassengerMapData />} /> */}
+      {/*<Route path="/passenger-telemetry" element={<PassengerTelemetry />} /> */}
       <Route path="/pilot-camera" element={<PilotCamera />} />
       <Route path="/pilot-map-data" element={<PilotMapData />} />
-      <Route path="/pilot-telemetry" element={<PilotTelemetry />} />
+      {/*<Route path="/pilot-telemetry" element={<PilotTelemetry />} /> */}
       <Route path="/patron-camera" element={<PatronCamera />} />
       <Route path="/patron-mapdata" element={<PatronMapData />} />
     </Routes>
