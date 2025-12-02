@@ -17,7 +17,7 @@ const TOPICS = [
 export default function PatronFocusMapData() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const [date, setDate] = useState(new Date().toLocaleDateString());
-  const [battery] = useState(67);
+  const [battery] = useState(100);
 
   // Camera view (now small view on the left)
   const cameraCanvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -311,7 +311,7 @@ export default function PatronFocusMapData() {
 
       {/* Bottom focus bar – Patron Level */}
       <div style={styles.bottomRectangles}>
-        <Link to="/" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/" style={{ textDecoration: 'none', width: '33.33%' }}>
           <div
             style={{
               ...styles.bottomRectangle,
@@ -324,7 +324,7 @@ export default function PatronFocusMapData() {
         </Link>
 
         {/* Focus 1 – back to PatronFocusCamera (inactive here) */}
-        <Link to="/patron-camera" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/patron-camera" style={{ textDecoration: 'none', width: '33.33%' }}>
           <div
             style={{
               ...styles.bottomRectangle,
@@ -337,12 +337,12 @@ export default function PatronFocusMapData() {
         </Link>
 
         {/* Focus 2 – ACTIVE (this page) */}
-        <Link to="/patron-mapdata" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/patron-mapdata" style={{ textDecoration: 'none', width: '33.33%' }}>
           <div
             style={{
               ...styles.bottomRectangle,
               backgroundColor: '#3D3D3D',
-              color: '#000',
+              color: '#fff',
             }}
           >
             Focus 2: Map Data
@@ -350,7 +350,7 @@ export default function PatronFocusMapData() {
         </Link>
 
         {/* Focus 3 – goes to Telemetry */}
-        <Link
+        {/*<Link
           to="/patron-camera"
           style={{ textDecoration: 'none', width: '26.25%' }}
         >
@@ -363,7 +363,7 @@ export default function PatronFocusMapData() {
           >
             Focus 3: Telemetry Data
           </div>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
@@ -506,4 +506,3 @@ const styles: { [k: string]: React.CSSProperties } = {
     cursor: 'pointer',
   },
 };
-
