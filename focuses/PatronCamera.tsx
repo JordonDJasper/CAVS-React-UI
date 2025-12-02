@@ -17,7 +17,7 @@ const TOPICS = [
 export default function PatronFocusCamera() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const [date, setDate] = useState(new Date().toLocaleDateString());
-  const [battery] = useState(67);
+  const [battery] = useState(100);
 
   // Right-hand main camera view (same as Pilot Focus 1)
   const cameraCanvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -312,7 +312,7 @@ export default function PatronFocusCamera() {
 
       {/* Bottom focus bar – Patron Level */}
       <div style={styles.bottomRectangles}>
-        <Link to="/" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/" style={{ textDecoration: 'none', width: '33.33%' }}>
           <div
             style={{
               ...styles.bottomRectangle,
@@ -323,7 +323,7 @@ export default function PatronFocusCamera() {
             Level - Patron
           </div>
         </Link>
-        <Link to="/patron-camera" style={{ textDecoration: 'none', width: '26.25%' }}>
+        <Link to="/patron-camera" style={{ textDecoration: 'none', width: '33.33%' }}>
           <div
             style={{
               ...styles.bottomRectangle,
@@ -336,12 +336,12 @@ export default function PatronFocusCamera() {
         </Link>
         {/* Focus 2 - clickable, goes to PatronFocusMapData */}
         <Link to="/patron-mapdata" style={{ textDecoration: 'none', display: 'contents' }}>
-          <div style={{ ...styles.bottomRectangle, width: '26.25%', backgroundColor: '#EBEBEB', color: '#000' }}>
+          <div style={{ ...styles.bottomRectangle, width: '33.33%', backgroundColor: '#EBEBEB', color: '#000' }}>
             Focus 2: Map Data
           </div>
         </Link>
         {/* Focus 3 – clickable, goes to FocusTelemetry route */}
-        <Link
+        {/*<Link
           to="/patron-camera"
           style={{ textDecoration: 'none', width: '26.25%' }}
         >
@@ -354,7 +354,7 @@ export default function PatronFocusCamera() {
           >
             Focus 3: Telemetry Data
           </div>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
